@@ -10,41 +10,42 @@ import SwiftUI
 struct ContentView: View {
     @State private var showSidebar: Bool = false
     @State private var dragOffset: CGFloat = 0
-    
     var body: some View {
         NavigationView {
             ZStack {
-                TabView {
+                TabView() {
                     TaskListView()
                         .tabItem {
                             Label("Tasks", systemImage: "list.dash")
                         }
-                    Text("Categories")
+                    CategoriesView()
                         .tabItem {
                             Label("Categories", systemImage: "square.grid.2x2")
                         }
-                    Text("Settings")
+                    SettingsView()
                         .tabItem {
                             Label("Settings", systemImage: "gear")
                         }
                 }
-                if showSidebar {
+                if showSidebar || dragOffset > 0 {
                     Color.black.opacity(0.4).edgesIgnoringSafeArea(.all).onTapGesture {
                         withAnimation {
                             showSidebar = false
                         }
                     }
                 }
+                
                 SidebarView()
                     .frame(width: 250)
-                    .offset(x: showSidebar ? -75 : -330)
+                    .offset(x: showSidebar ? -75 : -295)
                     .offset(x: dragOffset)
+                    .offset(y: 90)
                     .edgesIgnoringSafeArea(.all)
                     .gesture(
                         DragGesture()
                             .onChanged { gesture in
                                 if gesture.translation.width > 0 {
-                                    self.dragOffset = gesture.translation.width
+                                   self.dragOffset = min(gesture.translation.width, 220)
                                 }
                             }
                             .onEnded { gesture in
@@ -65,10 +66,11 @@ struct ContentView: View {
                     showSidebar.toggle()
                 }
                 }) {
-                    Image(systemName: showSidebar ? "xmark.circle.fill" : "line.horizontal.3")
+                    Image(systemName: showSidebar || dragOffset > 0 ? "xmark.circle.fill" : "line.horizontal.3")
                     .imageScale(.large)
                 })
-        }.modifier(NavigationBarModifier(backgroundColor: UIColor.systemBackground))
+        }
+        .modifier(NavigationBarModifier(backgroundColor: UIColor.systemBackground))
 
     }
 }

@@ -7,21 +7,21 @@
 import SwiftUI
 
 struct SidebarView: View {
+   
     var body: some View {
-        NavigationView {
-            List {
-                NavigationLink(destination: TaskListView()) {
-                    Label("Tasks", systemImage: "list.bullet")
-                }
-                NavigationLink(destination: Text("Categories Screen")) {
-                    Label("Categories", systemImage: "square.grid.2x2")
-                }
-                NavigationLink(destination: Text("Settings Screen")) {
-                    Label("Settings", systemImage: "gear")
-                }
+        List {
+            NavigationLink(destination: TaskListView()) {
+                Label("Tasks", systemImage: "list.bullet")
             }
-            .listStyle(SidebarListStyle())
-        }.frame(width: 250)
+            NavigationLink(destination: CategoriesView()) {
+                Label("Categories", systemImage: "square.grid.2x2")
+            }
+            NavigationLink(destination: SettingsView()) {
+                Label("Settings", systemImage: "gear")
+            }
+        }
+        .listStyle(SidebarListStyle())
+        .frame(width: 250)
     }
 }
 
