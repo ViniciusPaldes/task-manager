@@ -17,6 +17,7 @@
 		4730CDCB2B5ABFFE0014E2B1 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730CDCA2B5ABFFE0014E2B1 /* NavigationItem.swift */; };
 		4730CDCD2B5AC08A0014E2B1 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730CDCC2B5AC08A0014E2B1 /* CategoriesView.swift */; };
 		4730CDCF2B5AC0D90014E2B1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730CDCE2B5AC0D90014E2B1 /* SettingsView.swift */; };
+		4730CDD22B5AF4B40014E2B1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730CDD12B5AF4B40014E2B1 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		4730CDCA2B5ABFFE0014E2B1 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
 		4730CDCC2B5AC08A0014E2B1 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		4730CDCE2B5AC0D90014E2B1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4730CDD12B5AF4B40014E2B1 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,16 +65,12 @@
 		4730CDB32B59A03A0014E2B1 /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
+				4730CDD62B5AF5520014E2B1 /* screens */,
+				4730CDD52B5AF51E0014E2B1 /* components */,
+				4730CDD02B5AF4A80014E2B1 /* models */,
 				4730CDB42B59A03A0014E2B1 /* TaskManagerApp.swift */,
-				4730CDB62B59A03A0014E2B1 /* ContentView.swift */,
-				4730CDC22B59A2900014E2B1 /* TaskListView.swift */,
-				4730CDC42B59A5110014E2B1 /* SidebarView.swift */,
 				4730CDB82B59A03B0014E2B1 /* Assets.xcassets */,
 				4730CDBA2B59A03B0014E2B1 /* Preview Content */,
-				4730CDC62B5A957F0014E2B1 /* NavigationBarModifier.swift */,
-				4730CDCA2B5ABFFE0014E2B1 /* NavigationItem.swift */,
-				4730CDCC2B5AC08A0014E2B1 /* CategoriesView.swift */,
-				4730CDCE2B5AC0D90014E2B1 /* SettingsView.swift */,
 			);
 			path = TaskManager;
 			sourceTree = "<group>";
@@ -83,6 +81,35 @@
 				4730CDBB2B59A03B0014E2B1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4730CDD02B5AF4A80014E2B1 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				4730CDD12B5AF4B40014E2B1 /* Task.swift */,
+				4730CDCA2B5ABFFE0014E2B1 /* NavigationItem.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		4730CDD52B5AF51E0014E2B1 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				4730CDC42B59A5110014E2B1 /* SidebarView.swift */,
+				4730CDC62B5A957F0014E2B1 /* NavigationBarModifier.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		4730CDD62B5AF5520014E2B1 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				4730CDB62B59A03A0014E2B1 /* ContentView.swift */,
+				4730CDC22B59A2900014E2B1 /* TaskListView.swift */,
+				4730CDCC2B5AC08A0014E2B1 /* CategoriesView.swift */,
+				4730CDCE2B5AC0D90014E2B1 /* SettingsView.swift */,
+			);
+			path = screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +189,7 @@
 				4730CDB72B59A03A0014E2B1 /* ContentView.swift in Sources */,
 				4730CDC52B59A5110014E2B1 /* SidebarView.swift in Sources */,
 				4730CDB52B59A03A0014E2B1 /* TaskManagerApp.swift in Sources */,
+				4730CDD22B5AF4B40014E2B1 /* Task.swift in Sources */,
 				4730CDC32B59A2910014E2B1 /* TaskListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
