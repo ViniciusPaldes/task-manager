@@ -7,10 +7,10 @@
 import SwiftUI
 
 struct SidebarView: View {
-   
+    var tasks: [Task]
     var body: some View {
         List {
-            NavigationLink(destination: TaskListView()) {
+            NavigationLink(destination: TaskListView(tasks: tasks)) {
                 Label("Tasks", systemImage: "list.bullet")
             }
             NavigationLink(destination: CategoriesView()) {
@@ -27,6 +27,10 @@ struct SidebarView: View {
 
 struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
-        SidebarView()
+        SidebarView(tasks: [
+            Task(name: "Task 1", deadline: Date()),
+            Task(name: "Task 2", deadline: Date()),
+            Task(name: "Task 3", deadline: Date())
+        ])
     }
 }

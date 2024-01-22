@@ -10,11 +10,16 @@ import SwiftUI
 struct ContentView: View {
     @State private var showSidebar: Bool = false
     @State private var dragOffset: CGFloat = 0
+    @State private var showingTaskForm: Bool = false
+    @State private var tasks: [Task] = [ Task(name: "Task 1", deadline: Date()),
+                                         Task(name: "Task 2", deadline: Date()),
+                                         Task(name: "Task 4", deadline: Date())]
+    
     var body: some View {
         NavigationView {
             ZStack {
                 TabView() {
-                    TaskListView()
+                    TaskListView(tasks: tasks)
                         .tabItem {
                             Label("Tasks", systemImage: "list.dash")
                         }
@@ -35,7 +40,7 @@ struct ContentView: View {
                     }
                 }
                 
-                SidebarView()
+                SidebarView(tasks: tasks)
                     .frame(width: 250)
                     .offset(x: showSidebar ? -75 : -295)
                     .offset(x: dragOffset)
@@ -69,9 +74,18 @@ struct ContentView: View {
                     Image(systemName: showSidebar || dragOffset > 0 ? "xmark.circle.fill" : "line.horizontal.3")
                     .imageScale(.large)
                 })
+            .navigationBarItems(trailing: Button(action: {
+                showingTaskForm = true
+                })
+                {
+                    Image(systemName: "plus.app")
+                }).sheet(isPresented: $showingTaskForm) {
+                    TaskFormView(isPresented: $showingTaskForm, addTask: { newTask in
+                        tasks.append(newTask)
+                    })
+                }
         }
         .modifier(NavigationBarModifier(backgroundColor: UIColor.systemBackground))
-
     }
 }
 

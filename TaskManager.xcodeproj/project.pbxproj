@@ -18,6 +18,7 @@
 		4730CDCD2B5AC08A0014E2B1 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730CDCC2B5AC08A0014E2B1 /* CategoriesView.swift */; };
 		4730CDCF2B5AC0D90014E2B1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730CDCE2B5AC0D90014E2B1 /* SettingsView.swift */; };
 		4730CDD22B5AF4B40014E2B1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730CDD12B5AF4B40014E2B1 /* Task.swift */; };
+		4730CDDD2B5AF5D90014E2B1 /* TaskFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730CDDC2B5AF5D90014E2B1 /* TaskFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		4730CDCC2B5AC08A0014E2B1 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		4730CDCE2B5AC0D90014E2B1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4730CDD12B5AF4B40014E2B1 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		4730CDDC2B5AF5D90014E2B1 /* TaskFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskFormView.swift; path = ../../../../../../TaskFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				4730CDC22B59A2900014E2B1 /* TaskListView.swift */,
 				4730CDCC2B5AC08A0014E2B1 /* CategoriesView.swift */,
 				4730CDCE2B5AC0D90014E2B1 /* SettingsView.swift */,
+				4730CDDC2B5AF5D90014E2B1 /* TaskFormView.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4730CDCB2B5ABFFE0014E2B1 /* NavigationItem.swift in Sources */,
+				4730CDDD2B5AF5D90014E2B1 /* TaskFormView.swift in Sources */,
 				4730CDCF2B5AC0D90014E2B1 /* SettingsView.swift in Sources */,
 				4730CDCD2B5AC08A0014E2B1 /* CategoriesView.swift in Sources */,
 				4730CDC72B5A957F0014E2B1 /* NavigationBarModifier.swift in Sources */,

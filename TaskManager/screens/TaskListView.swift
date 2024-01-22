@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct TaskListView: View {
+    var tasks: [Task]
     var body: some View {
-        List {
-            Text("Task 1")
-            Text("Task 2")
-            Text("Task 3")
+        List(tasks) { task in
+            Text(task.name)
         }.navigationTitle("Tasks")
     }
     
@@ -20,6 +19,10 @@ struct TaskListView: View {
 
 struct TaskListView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskListView()
+        TaskListView(tasks: [
+            Task(name: "Task 1", deadline: Date()),
+            Task(name: "Task 2", deadline: Date()),
+            Task(name: "Task 4", deadline: Date())
+        ])
     }
 }
